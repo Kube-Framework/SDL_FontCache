@@ -980,7 +980,7 @@ Uint8 FC_UploadGlyphCache(FC_Font* font, int cache_level, SDL_Surface* data_surf
         GPU_SetImageFilter(new_level, GPU_FILTER_NEAREST);
     #else
     SDL_Texture* new_level;
-    if(!fc_has_render_target_support)
+    if(fc_has_render_target_support > 0)
         new_level = SDL_CreateTextureFromSurface(font->renderer, data_surface);
     else
     {

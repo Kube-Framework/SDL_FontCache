@@ -13,6 +13,8 @@ add_library(SDL2::SDL2_FontCache ALIAS FontCache)
 
 target_include_directories(FontCache PUBLIC .)
 
+# target_compile_definitions(FontCache PUBLIC FC_USE_SDL_GPU)
+
 target_link_libraries(FontCache
     PUBLIC
         SDL2::SDL2-static
